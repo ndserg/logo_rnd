@@ -42,11 +42,15 @@ exports.copy = copy;
 // Images
 
 const images = () => {
-  return src("source/img/**/*.{jpg,png,svg}")
+  return src(["source/img/**/*.{jpg,png,svg}", "!source/img/icons/**/*"])
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 75, progressive: true }),
       imagemin.optipng({ optimizationLevel: 3 }),
-      imagemin.svgo()
+      imagemin.svgo({
+        plugins: [{
+          removeViewBox: false,
+        }],
+      }),
     ]))
     .pipe(dest("build/img"))
 }
@@ -66,9 +70,13 @@ exports.createWebp = createWebp;
 // Icons
 
 const icons = () => {
-  return src("source/img/icons/*.svg")
+  return src(["source/img/icons/*.svg", "source/img/logo.svg"])
     .pipe(mode.production(imagemin([
-      imagemin.svgo()
+      imagemin.svgo({
+        plugins: [{
+          removeViewBox: false,
+        }],
+      }),
     ])))
     .pipe(svgstore())
     .pipe(rename("sprite.svg"))
@@ -95,7 +103,7 @@ const styles = () => {
 }
 
 exports.styles = styles;
-
+/*
 //js
 const scripts = () => {
   const isSourceMaps = mode.development() ? 'source-map' : 'eval';
@@ -124,7 +132,7 @@ const scripts = () => {
 }
 
 exports.scripts = scripts;
-
+*/
 // HTML
 
 const html = () => {
@@ -166,18 +174,18 @@ const reload = (done) => {
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", series(styles));
   gulp.watch("source/*.html", series(html));
-  gulp.watch("source/js/**/*.js", series(scripts, reload));
+  //  gulp.watch("source/js/**/*.js", series(scripts, reload));
 }
 
 exports.build = series(
   clean,
-  parallel(copy, styles, scripts, images, createWebp, icons),
+  parallel(copy, styles, images, createWebp, icons),
   html
 );
 
 exports.default = series(
   clean,
-  parallel(copy, styles, scripts, images, createWebp, icons),
+  parallel(copy, styles, images, createWebp, icons),
   html,
   server,
   watcher
