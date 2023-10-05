@@ -15,15 +15,65 @@
 </head>
 
 <body>
-  <header class="header-main">
+  <header class="header">
+    <div class="header__top container">
+      <button class="header__menu-button"></button>
 
+      <a class="header__logo logo" href="index.html">
+        <svg class="logo__img" width="62" height="19">
+          <use xlink:href="img/icons/sprite.svg#logo"></use>
+        </svg>
+      </a>
+
+      <div class="header__contacts header-contacts">
+        <a class="header-contacts__phone" href="tel:+7863000000">
+          <svg class="header-contacts__icon-whatsapp" width="28" height="28">
+            <use xlink:href="img/icons/sprite.svg#icon-whatsapp"></use>
+          </svg>
+          <span>+7(863) 000 00 00</span>
+        </a>
+        <p class="header-contacts__address">
+          <span class="header-contacts__city">Ростов-на-Дону</span>
+          <span class="header-contacts__street">ул. Ленина, 2Б</span>
+        </p>
+        <button class="header__contacts-button button button--green" type="button">Записаться на прием</button>
+      </div>
+    </div>
+
+    <nav class="header__nav site-nav header__nav--open">
+      <div class="container">
+        <ul class="header__list site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#">О клинике</a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#">Услуги</a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#">Специалисты</a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#">Цены</a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#">Контакты</a>
+          </li>
+        </ul>
+
+        <button class="header__nav-button button button--grey" type="button">Записаться на прием</button>
+      </div>
+    </nav>
   </header>
 
   <main>
 
   </main>
 
-  <footer class="footer-main">
+  <footer class="footer">
 
   </footer>
 

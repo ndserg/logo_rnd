@@ -8,9 +8,8 @@
   },
   "author": "Denis Natalevich",
   "scripts": {
-    "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\"",
-    "test": "npm run editorconfig && npm run stylelint",
+    "test": "npm run stylelint",
     "build": "gulp build --production",
     "start": "gulp --development"
   },
@@ -18,14 +17,6 @@
     "last 2 versions",
     "not dead",
     "not ie <= 11"
-  ],
-  "editorconfig-cli": [
-    "*.json",
-    "*.js",
-    "source/*.html",
-    "source/js/**/*.js",
-    "source/img/**/*.svg",
-    "source/sass/**/*.scss"
   ],
   "devDependencies": {
     "@babel/core": "7.23.0",
