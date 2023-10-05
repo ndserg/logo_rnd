@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <nav class="header__nav site-nav header__nav--open">
+    <nav class="header__nav site-nav header__nav--closed">
       <div class="container">
         <ul class="header__list site-nav__list">
           <li class="site-nav__item">
@@ -69,12 +69,66 @@
     </nav>
   </header>
 
-  <main>
+  <main class="page-main">
+    <h1 class="visually-hidden">Главня страница Многопрофильной клиники для детей
+      и взрослых Logo</h1>
 
+    <section class="page-main__about about">
+      <div class="about__wrapper container">
+        <div class="about__info">
+          <h2 class="about__title">Многопрофильная клиника для детей <br> и взрослых</h2>
+
+          <p class="about__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </p>
+        </div>
+
+        <figure class="about__img">
+          <picture>
+            <source type="image/webp" media="(min-width: 1140px)" srcset="img/banner-desktop-1.webp">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/banner-tablet-1.webp">
+            <source type="image/webp" srcset="img/banner-mobile-1.webp">
+            <source media="(min-width: 1140px)" srcset="img/banner-desktop-1.jpg">
+            <source media="(min-width: 768px)" srcset="img/banner-tablet-1.jpg">
+            <img src="img/banner-mobile-1.jpg" alt="Комната ожидания с детским уголком" width="375" height="288">
+          </picture>
+        </figure>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
+    <div class="footer__wrapper container">
+      <a class="footer__logo logo" href="index.html">
+        <svg class="logo__img" width="62" height="18">
+          <use xlink:href="img/logo.svg"></use>
+        </svg>
+      </a>
 
+      <nav class="footer__nav site-nav">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#">О клинике</a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="#">Услуги</a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#">Специалисты</a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#">Цены</a>
+          </li>
+
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </footer>
 
   <!-- inject:js -->
