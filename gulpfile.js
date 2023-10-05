@@ -42,7 +42,7 @@ exports.copy = copy;
 // Images
 
 const images = () => {
-  return src(["source/img/**/*.{jpg,png,svg}", "!source/img/icons/**/*"])
+  return src("source/img/**/*.{jpg,png,svg}")
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 75, progressive: true }),
       imagemin.optipng({ optimizationLevel: 3 }),
