@@ -1,6 +1,4 @@
 .header {
-  position: relative;
-
   background-color: $grey;
 
   @media (min-width: $desktop-width) {
@@ -12,12 +10,15 @@
   position: relative;
 
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  height: 65px;
+  min-height: 65px;
 
   @media (min-width: $desktop-width) {
     padding-right: 4px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-wrap: wrap;
   }
 }
 
@@ -138,9 +139,10 @@
 
   &--open {
     position: absolute;
+    z-index: 100;
 
     display: block;
-    height: 100vh;
+    min-height: 100%;
   }
 
   @media (min-width: $desktop-width) {
@@ -152,7 +154,7 @@
   }
 }
 
-.header__list {
+.header__nav-list {
   margin-bottom: 39px;
 
   @media (min-width: $desktop-width) {
