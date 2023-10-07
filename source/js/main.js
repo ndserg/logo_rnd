@@ -1,7 +1,9 @@
-import initMenuPopup from "./menu";
-import initSlider from "./slider";
+import initMenuPopup from './menu';
+import initSlider from './slider';
+import initForm from './contact-form';
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
   initMenuPopup();
   initSlider();
+  initForm();
 });
