@@ -1,4 +1,4 @@
-const slidesHideClass = 'visually-hidden';
+const slidesHideClass = 'promo__action--hidden';
 const slidesCurrentClass = 'promo__action--current'
 const paginationNoJSClass = 'pagination--nojs';
 

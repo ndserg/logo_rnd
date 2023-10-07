@@ -9,6 +9,7 @@ const mediaQueryList = window.matchMedia(`(min-width: ${VEWPORTS.desktop}px)`);
 const menuButtonCloseClass = 'header__menu-button--close';
 const menuButtonNoJsClass = 'header__menu-button--nojs';
 const headerMainMenuOpenClass = 'header__nav--open';
+const headerMainMenuCloseClass = 'header__nav--close';
 const headerMainMenuNoJsClass = 'header__nav--nojs';
 
 let isSettedListener = false;
@@ -19,6 +20,7 @@ const mouseUpHandler = (evt) => {
 
     menuButton.classList.remove(menuButtonCloseClass);
     menu.classList.remove(headerMainMenuOpenClass);
+    menu.classList.add(headerMainMenuCloseClass);
   }
 };
 
@@ -26,6 +28,7 @@ const menuButtonClickHandler = (evt) => {
   evt.preventDefault();
   menuButton.classList.toggle(menuButtonCloseClass);
   menu.classList.toggle(headerMainMenuOpenClass);
+  menu.classList.toggle(headerMainMenuCloseClass);
 };
 
 const removeMainNavListener = () => {
@@ -40,6 +43,7 @@ const addmenuButtonListener = () => {
   if (!isSettedListener) {
     menuButton.addEventListener('click', menuButtonClickHandler);
     addMainNavListener();
+    menu.classList.add(headerMainMenuCloseClass)
     isSettedListener = true;
   }
 };
@@ -50,6 +54,7 @@ const removemenuButtonListener = () => {
     removeMainNavListener();
     menuButton.classList.remove(menuButtonCloseClass);
     menu.classList.remove(headerMainMenuOpenClass);
+    menu.classList.remove(headerMainMenuCloseClass);
     isSettedListener = false;
   }
 };
@@ -68,6 +73,7 @@ const initMenuPopup = () => {
 
   menuButton.classList.contains(menuButtonNoJsClass) ? menuButton.classList.remove(menuButtonNoJsClass) : '';
   menu.classList.contains(headerMainMenuNoJsClass) ? menu.classList.remove(headerMainMenuNoJsClass) : '';
+  menu.classList.contains(headerMainMenuCloseClass) ? '' : menu.classList.add(headerMainMenuCloseClass);
 
   addmenuButtonListener();
 
