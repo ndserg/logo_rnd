@@ -4,6 +4,10 @@
   justify-content: center;
 
   column-gap: 36px;
+
+  &--nojs {
+    display: none;
+  }
 }
 
 .pagination__button {
