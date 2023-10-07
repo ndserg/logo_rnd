@@ -6,10 +6,10 @@ let menuButton = null;
 let menu = null;
 
 const mediaQueryList = window.matchMedia(`(min-width: ${VEWPORTS.desktop}px)`);
-const menuButtonCloseClass = "header__menu-button--close";
-const menuButtonNoJsClass = "header__menu-button--nojs";
-const headerMainMenuOpenClass = "header__nav--open";
-const headerMainMenuNoJsClass = "header__nav--nojs";
+const menuButtonCloseClass = 'header__menu-button--close';
+const menuButtonNoJsClass = 'header__menu-button--nojs';
+const headerMainMenuOpenClass = 'header__nav--open';
+const headerMainMenuNoJsClass = 'header__nav--nojs';
 
 let isSettedListener = false;
 
@@ -63,17 +63,17 @@ const screenSizeChangeHandler = (mql) => {
 };
 
 const initMenuPopup = () => {
-  menuButton = document.querySelector(".header__menu-button");
-  menu = document.querySelector(".header__nav");
+  menuButton = document.querySelector('.header__menu-button');
+  menu = document.querySelector('.header__nav');
 
-  menuButton.classList.contains(menuButtonNoJsClass) ? menuButton.classList.remove(menuButtonNoJsClass) : "";
-  menu.classList.contains(headerMainMenuNoJsClass) ? menu.classList.remove(headerMainMenuNoJsClass) : "";
+  menuButton.classList.contains(menuButtonNoJsClass) ? menuButton.classList.remove(menuButtonNoJsClass) : '';
+  menu.classList.contains(headerMainMenuNoJsClass) ? menu.classList.remove(headerMainMenuNoJsClass) : '';
 
   addmenuButtonListener();
 
   screenSizeChangeHandler(mediaQueryList);
 
-  mediaQueryList.addEventListener("change", screenSizeChangeHandler);
+  mediaQueryList.addEventListener('change', screenSizeChangeHandler);
 };
 
 export default initMenuPopup;

@@ -120,10 +120,18 @@
 }
 
 .header__contacts-button {
-  display: none;
+  &--top {
+    display: none;
+  }
 
   @media (min-width: $desktop-width) {
-    display: block;
+    &--top {
+      display: block;
+    }
+
+    &--nav {
+      display: none;
+    }
   }
 }
 
@@ -163,11 +171,5 @@
 
   @media (min-width: $desktop-width) {
     margin-bottom: 0;
-  }
-}
-
-.header__nav-button {
-  @media (min-width: $desktop-width) {
-    display: none;
   }
 }
