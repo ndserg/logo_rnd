@@ -1,4 +1,3 @@
-'use strict';
 const slidesHideClass = 'visually-hidden';
 const slidesCurrentClass = 'promo__action--current'
 const paginationNoJSClass = 'pagination--nojs';
@@ -67,6 +66,4 @@ const initSlider = () => {
   }
 };
 
-window.addEventListener("DOMContentLoaded", () => {
-  initSlider();
-});
+export default initSlider;
