@@ -124,7 +124,7 @@ const scripts = () => {
     },
   };
 
-  return src("source/js/*.js")
+  return src("source/js/main.js")
     .pipe(webpack(options))
     .pipe(mode.production(uglify()))
     .pipe(dest("build/js"))
