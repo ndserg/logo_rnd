@@ -9,3 +9,11 @@
     margin-bottom: 100px;
   }
 }
+
+.page-main__slider {
+  margin-bottom: 35px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 92px;
+  }
+}

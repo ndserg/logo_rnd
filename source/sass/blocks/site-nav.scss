@@ -6,6 +6,9 @@
   margin: 0;
   padding: 0;
 
+  font-size: 16px;
+  line-height: 24px;
+
   list-style: none;
 
   @media (min-width: $desktop-width) {
@@ -21,8 +24,8 @@
 
   color: $white;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: inherit;
   text-decoration: none;
 
   @media (min-width: $desktop-width) {
@@ -31,7 +34,7 @@
   }
 
   &:hover {
-    background-color: $green-light-color;
+    color: $green-hover-color;
   }
 
   &:active {
@@ -39,6 +42,7 @@
   }
 
   &--active {
-    box-shadow: 0px 3px 8px 2px $green-dark-color;
+    font-weight: 700;
+    text-decoration: underline;
   }
 }
