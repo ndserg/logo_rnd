@@ -103,7 +103,7 @@ const styles = () => {
 }
 
 exports.styles = styles;
-/*
+
 //js
 const scripts = () => {
   const isSourceMaps = mode.development() ? 'source-map' : 'eval';
@@ -124,7 +124,7 @@ const scripts = () => {
     },
   };
 
-  return src("source/js/main.js")
+  return src("source/js/*.js")
     .pipe(webpack(options))
     .pipe(mode.production(uglify()))
     .pipe(dest("build/js"))
@@ -132,7 +132,7 @@ const scripts = () => {
 }
 
 exports.scripts = scripts;
-*/
+
 // HTML
 
 const html = () => {
@@ -174,18 +174,18 @@ const reload = (done) => {
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", series(styles));
   gulp.watch("source/*.html", series(html));
-  //  gulp.watch("source/js/**/*.js", series(scripts, reload));
+  gulp.watch("source/js/**/*.js", series(scripts, reload));
 }
 
 exports.build = series(
   clean,
-  parallel(copy, styles, images, createWebp, icons),
+  parallel(copy, styles, scripts, images, createWebp, icons),
   html
 );
 
 exports.default = series(
   clean,
-  parallel(copy, styles, images, createWebp, icons),
+  parallel(copy, styles, scripts, images, createWebp, icons),
   html,
   server,
   watcher
