@@ -17,12 +17,12 @@ let isMessageOpened = false;
 
 const sucsessMessage = {
   title: 'Сообщение отправлено!',
-  text: 'Благодарим за обращение! Постараемся ответить в кратчайшее время.'
+  text: 'Благодарим за обращение! Постараемся ответить в кратчайшее время.',
 };
 
 const errorMessage = {
   title: 'Что-то пошло не так, сообщение не отпралено!',
-  text: 'Попробуйте еще раз немного позже.'
+  text: 'Попробуйте еще раз немного позже.',
 };
 
 const closeMessageClickHandler = (evt) => {
@@ -32,15 +32,17 @@ const closeMessageClickHandler = (evt) => {
 
   message.classList.add(messageClosedClass);
   messageCloseButton.removeEventListener('click', closeMessageClickHandler);
+  // eslint-disable-next-line no-use-before-define
   document.removeEventListener('keydown', escKeyPressHandler);
-}
+};
 
 const escKeyPressHandler = (evt) => {
-  if (evt.keyCode === 27 || evt.key === "Escape") {
+  if (evt.keyCode === 27 || evt.key === 'Escape') {
     if (isFormOpened) {
       isFormOpened = false;
 
       contactsContainer.classList.add(contactFormClosedClass);
+      // eslint-disable-next-line no-use-before-define
       formCloseButton.removeEventListener('click', closeContactsHandler);
       document.removeEventListener('keydown', escKeyPressHandler);
     } else if (isMessageOpened) {
@@ -51,7 +53,6 @@ const escKeyPressHandler = (evt) => {
       document.removeEventListener('keydown', escKeyPressHandler);
     }
   }
-
 };
 
 const closeContactsHandler = (evt) => {
@@ -62,11 +63,12 @@ const closeContactsHandler = (evt) => {
   contactsContainer.classList.add(contactFormClosedClass);
   formCloseButton.removeEventListener('click', closeContactsHandler);
   document.removeEventListener('keydown', escKeyPressHandler);
-}
+};
 
 const formControl = (flag) => {
+  // eslint-disable-next-line no-return-assign, no-param-reassign
   formElements.forEach((element) => element.disabled = flag);
-}
+};
 
 const onResponse = (messageObj) => {
   form.reset();
@@ -77,7 +79,7 @@ const onResponse = (messageObj) => {
   isMessageOpened = true;
   messageCloseButton.addEventListener('click', closeMessageClickHandler);
   document.addEventListener('keydown', escKeyPressHandler);
-}
+};
 
 const sendFormData = () => {
   const params = new FormData(form);
@@ -88,7 +90,7 @@ const sendFormData = () => {
     mode: 'cors',
     cache: 'no-cache',
     credentials: 'same-origin',
-    body: params
+    body: params,
   })
     .then((response) => {
       formControl(false);
@@ -97,15 +99,17 @@ const sendFormData = () => {
         onResponse(sucsessMessage);
         form.reset();
       } else {
-        return response.text().then(text => { throw new Error(text) });
+        return response.text().then((text) => { throw new Error(text); });
       }
+
+      return response;
     })
     .catch(() => onResponse(errorMessage))
     .finally(() => {
       contactsContainer.classList.add(contactFormClosedClass);
       isFormOpened = false;
     });
-}
+};
 
 const formSubmitHandler = (evt) => {
   evt.preventDefault();
@@ -113,7 +117,7 @@ const formSubmitHandler = (evt) => {
   if (form.checkValidity()) {
     sendFormData();
   }
-}
+};
 
 const contactButtonsClickHandler = (evt) => {
   evt.preventDefault();

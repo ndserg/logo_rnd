@@ -1,5 +1,5 @@
 const VEWPORTS = {
-  desktop: 1140
+  desktop: 1140,
 };
 
 let menuButton = null;
@@ -43,7 +43,7 @@ const addmenuButtonListener = () => {
   if (!isSettedListener) {
     menuButton.addEventListener('click', menuButtonClickHandler);
     addMainNavListener();
-    menu.classList.add(headerMainMenuCloseClass)
+    menu.classList.add(headerMainMenuCloseClass);
     isSettedListener = true;
   }
 };
@@ -71,9 +71,17 @@ const initMenuPopup = () => {
   menuButton = document.querySelector('.header__menu-button');
   menu = document.querySelector('.header__nav');
 
-  menuButton.classList.contains(menuButtonNoJsClass) ? menuButton.classList.remove(menuButtonNoJsClass) : '';
-  menu.classList.contains(headerMainMenuNoJsClass) ? menu.classList.remove(headerMainMenuNoJsClass) : '';
-  menu.classList.contains(headerMainMenuCloseClass) ? '' : menu.classList.add(headerMainMenuCloseClass);
+  if (menuButton.classList.contains(menuButtonNoJsClass)) {
+    menuButton.classList.remove(menuButtonNoJsClass);
+  }
+
+  if (menu.classList.contains(headerMainMenuNoJsClass)) {
+    menu.classList.remove(headerMainMenuNoJsClass);
+  }
+
+  if (!menu.classList.contains(headerMainMenuCloseClass)) {
+    menu.classList.add(headerMainMenuCloseClass);
+  }
 
   addmenuButtonListener();
 

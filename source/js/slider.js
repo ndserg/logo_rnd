@@ -1,5 +1,5 @@
 const slidesHideClass = 'promo__action--hidden';
-const slidesCurrentClass = 'promo__action--current'
+const slidesCurrentClass = 'promo__action--current';
 const paginationNoJSClass = 'pagination--nojs';
 
 let slides = null;
@@ -14,21 +14,21 @@ const classToggler = (slide) => {
 
   currentSlide = slide;
   currentPage.textContent = currentSlide + 1;
-}
+};
 
-const prevButtonClickHandler = function (evt) {
+const prevButtonClickHandler = (evt) => {
   evt.preventDefault();
 
   const prevSlide = (currentSlide <= 0) ? slides.length - 1 : currentSlide - 1;
   classToggler(prevSlide);
-}
+};
 
-const nextButtonClickHandler = function (evt) {
+const nextButtonClickHandler = (evt) => {
   evt.preventDefault();
 
   const nextSlide = (currentSlide >= slides.length - 1) ? 0 : currentSlide + 1;
   classToggler(nextSlide);
-}
+};
 
 const initSlider = () => {
   let paginationContainer = null;
@@ -36,7 +36,6 @@ const initSlider = () => {
   let nextButton = null;
 
   const slidesContainer = document.querySelector('.page-main__slider');
-
 
   if (slidesContainer) {
     slides = slidesContainer.querySelectorAll('.promo__action');
