@@ -31,6 +31,7 @@ const copy = () => {
   return src([
     "source/*.*",
     "source/fonts/**/*.{woff2,woff}",
+    "source/php/**/*",
   ], {
     base: "source"
   })
