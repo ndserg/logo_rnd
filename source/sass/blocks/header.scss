@@ -158,20 +158,10 @@
 
     display: block;
     min-height: 100%;
-
-    animation: menuDropDown 1s ease-in-out;
   }
 
   &--close {
-    position: absolute;
-    z-index: 100;
-
-    display: block;
-    min-height: 100%;
-
-    transform: translateY(-3000px);
-
-    transition: all 0.5s linear;
+    display: none;
   }
 
   @media (min-width: $desktop-width) {
@@ -190,27 +180,5 @@
 
   @media (min-width: $desktop-width) {
     margin-bottom: 0;
-  }
-}
-
-@keyframes menuDropDown {
-  0% {
-    transform: translateY(-2000px);
-  }
-
-  25% {
-    transform: translateY(500px);
-  }
-
-  50% {
-    transform: translateY(-300px);
-  }
-
-  75% {
-    transform: translateY(200px);
-  }
-
-  100% {
-    transform: translateY(0);
   }
 }

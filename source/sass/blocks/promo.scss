@@ -14,6 +14,8 @@
 
   background-color: $green-lightern;
 
+  overflow: hidden;
+
   @media (min-width: $tablet-width) {
     position: relative;
 
@@ -233,11 +235,11 @@
 
 @keyframes slideLeft {
   0% {
-    transform: translateX(25%);
+    transform: translateX(-100%);
   }
 
   50% {
-    transform: translateX(15%);
+    transform: translateX(-50%);
   }
 
   100% {
@@ -247,11 +249,11 @@
 
 @keyframes slideRight {
   0% {
-    transform: translateX(-25%);
+    transform: translateX(100%);
   }
 
   50% {
-    transform: translateX(-15%);
+    transform: translateX(50%);
   }
 
   100% {

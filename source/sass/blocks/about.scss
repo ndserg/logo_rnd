@@ -2,6 +2,8 @@
   position: relative;
 
   background-color: $grey-light;
+
+  overflow: hidden;
 }
 
 .about__wrapper{
@@ -69,6 +71,8 @@
 
   height: 288px;
   margin: 0;
+
+
 
   img {
     width: 100%;
