@@ -1,0 +1,246 @@
+.promo.swiper {
+  width: $mobile-width;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: $tablet-width) {
+    width: $tablet-width;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: $desktop-width;
+  }
+}
+
+.promo__wrapper.swiper-wrapper {
+  box-sizing: border-box;
+
+  margin-bottom: 22px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 34px;
+  }
+}
+
+.promo__action {
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background-color: $green-lightern;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+
+    flex-direction: row;
+
+    align-items: stretch;
+
+    min-height: 200px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 440px;
+  }
+}
+
+.promo__action-info {
+  padding-top: 22px;
+  padding-bottom: 42px;
+  padding-left: 23px;
+
+  background-color: $green-lightern;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    z-index: 3;
+
+    width: 406px;
+    padding-top: 26px;
+    padding-bottom: 28px;
+    padding-left: 32px;
+
+    background-color: transparent;
+    background-image: linear-gradient(to left bottom, transparent 50%, $green-lightern 50%), linear-gradient(to right, $green-lightern 350px, transparent 350px);
+    background-repeat: no-repeat;
+    background-position: 100% 0%, 0 0;
+    background-size: 56px 100%, 350px 100%;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 613px;
+    padding-top: 53px;
+    padding-bottom: 56px;
+    padding-left: 63px;
+
+    background-image: linear-gradient(to left bottom, transparent 50%, $green-lightern 50%), linear-gradient(to right, $green-lightern 501px, transparent 501px);
+    background-size: 112px 100%, 501px 100%;
+  }
+}
+
+.promo__action-img {
+  order: -1;
+
+  height: 169px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 420px;
+    height: 267px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 692px;
+    height: 440px;
+  }
+}
+
+.promo__title {
+  margin: 0;
+  margin-bottom: 5px;
+
+  font-size: 26px;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 6px;
+
+    font-size: 38px;
+  }
+}
+
+.promo__text {
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 19px;
+
+    font-size: 22px;
+  }
+}
+
+.promo__list {
+  display: flex;
+
+  flex-direction: column;
+
+  row-gap: 6px;
+
+  padding: 0;
+  margin: 0;
+  margin-bottom: 17px;
+
+  list-style-type: none;
+
+  @media (min-width: $desktop-width) {
+    row-gap: 8px;
+
+    margin-bottom: 35px;
+  }
+}
+
+.promo__item {
+  position: relative;
+
+  display: block;
+
+  padding-left: 16px;
+
+  font-size: 14px;
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 7px;
+    left: 0;
+
+    display: block;
+
+    width: 7px;
+    height: 7px;
+
+    content: "";
+
+    background-color: $f-green-secondary-color;
+    border-radius: 50%;
+  }
+}
+
+.promo__price {
+  margin: 0;
+  margin-bottom: 26px;
+
+  font-size: 18px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 25px;
+
+    font-size: 20px;
+  }
+}
+
+.promo__price-old {
+  margin-left: 5px;
+
+  font-size: 14px;
+  color: $f-grey-dark-color;
+  text-decoration: line-through;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 9px;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.promo__buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  column-gap: 6px;
+
+  @media (min-width: $tablet-width) {
+    column-gap: 13px;
+  }
+}
+
+.promo__button {
+  min-width: 137px;
+
+  @media (min-width: $tablet-width) {
+    min-width: 150px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 196px;
+  }
+}

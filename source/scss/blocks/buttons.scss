@@ -1,0 +1,108 @@
+.button {
+  display: block;
+
+  padding-top: 11px;
+  padding-right: 24px;
+  padding-bottom: 11px;
+  padding-left: 24px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+
+  cursor: pointer;
+
+  border: none;
+  border-radius: 50px;
+
+  &--grey {
+    font-weight: 700;
+    color: $f-green-secondary-color;
+
+    background-color: $grey;
+    border: none;
+    border-radius: 50px;
+
+    &:hover {
+      color: $white;
+
+      background-color: $green-light-color;
+    }
+  }
+
+  &--green {
+    color: $white;
+
+    background-color: $green-light-color;
+
+    &:hover {
+      background-color: $green-hover-color;
+    }
+  }
+
+  &--transparent {
+    color: $f-green-color;
+
+    background-color: transparent;
+    border: 1px solid $green-light-color;
+
+    &:hover {
+      color: $white;
+
+      background-color: $green-light-color;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  display: block;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  font-size: 0;
+
+  cursor: pointer;
+
+  background-color: transparent;
+  border: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 12px;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    content: "";
+
+    background-color: $f-main-color;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}

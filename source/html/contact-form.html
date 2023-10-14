@@ -1,0 +1,26 @@
+<section class="contacts contacts--closed">
+  <div class="contacts__wrapper container">
+    <h2 class="contacts__title">Форма обратной связи</h2>
+
+    <form class="contacts__form" action="#" method="post">
+      <label class="contacts__label" for="user-name">Ваше имя:</label>
+      <input class="contacts__input" type="text" name="user-name" id="user-name" placeholder="Как к вам обращаться?" minlength="4" maxlength="40" pattern="^[a-zA-Zа-яёА-ЯЁ\s]+$" required>
+
+      <label class="contacts__label" for="user-phone">Ваше Телефон:</label>
+      <input class="contacts__input" type="text" name="user-phone" id="user-phone" pattern="^[\+ 0-9]+$" minlength="6" maxlength="20" placeholder="Телефон для связи (не обязательно)">
+
+      <label class="contacts__label" for="user-email">Ваш e-mail:</label>
+      <input class="contacts__input" type="email" name="user-email" id="user-email" placeholder="Введита ваш E-Mail" required>
+
+      <label class="contacts__label" for="message-subject">Тема сообщения:</label>
+      <input class="contacts__input" type="text" name="message-subject" id="message-subject" placeholder="Опишите коротко тему обращения" pattern="^[a-zA-Zа-яёА-ЯЁ\s]+$" minlength="5" maxlength="40" required>
+
+      <label class="contacts__label" for="message-text">Текст сообщения:</label>
+      <textarea class="contacts__input" name="message-text" id="message-text" cols="30" rows="7" placeholder="Текст обращения" required></textarea>
+
+      <button class="contacts__button button button--green" type="submit">Отправить сообщение</button>
+    </form>
+
+    <button class="contacts__close-button close-button">Закрыть форму</button>
+  </div>
+</section>
