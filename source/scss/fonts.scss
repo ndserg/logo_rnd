@@ -1,0 +1,18 @@
+@font-face {
+	font-family: "PTSansCaption";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/PTSansCaption-Regular.woff2") format("woff2"),
+	url("../fonts/PTSansCaption-Regular.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "PTSansCaption";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/PTSansCaption-Bold.woff2") format("woff2"),
+	url("../fonts/PTSansCaption-Bold.woff") format("woff");
+	font-display: swap;
+}
+

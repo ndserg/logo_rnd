@@ -1,0 +1,52 @@
+.pagination {
+  display: flex;
+
+  column-gap: 36px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__button {
+  display: block;
+
+  width: 34px;
+  height: 34px;
+
+  font-size: 0;
+  line-height: 0;
+
+  cursor: pointer;
+
+  background-color: transparent;
+  background-image: url("@img/icons/icon-arrow-right-grey.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  border: none;
+
+  &--prev {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    background-image: url("@img/icons/icon-arrow-right-green.svg");
+  }
+
+  &:active {
+    background-image: url("@img/icons/icon-arrow-right-green.svg");
+    opacity: 0.6;
+  }
+}
+
+.pagination__swiper.swiper-pagination-fraction {
+  width: auto;
+
+  font-size: 18px;
+  line-height: normal;
+  color: $f-grey-color;
+
+  .swiper-pagination-current {
+    color: $f-main-color;
+  }
+}
